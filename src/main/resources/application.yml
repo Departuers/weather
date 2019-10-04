@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Weather
+  redis:
+    database: 0
+    host: 192.168.163.128
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+    port: 6379
+    timeout: 10000
+    password: ILOVEFaker
+server:
+  port: 8069

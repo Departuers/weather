@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  weather:
+    image: weather
+    container_name: my_weather
+    restart: always
+    ports:
+      - "8070:8069"
