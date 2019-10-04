@@ -12,6 +12,6 @@ spring:
         min-idle: 0
     port: 6379
     timeout: 10000
-    password: sktFaker
+    password: ILOVEFaker
 server:
   port: 8069
