@@ -29,4 +29,11 @@ public class Weather {
     public Mono<String> cityweather(@PathVariable String city) {
         return Mono.just(weatherService.getweather(city, cityurl));
     }
+
+    @GetMapping("/city")
+    public Mono<String> cityweatherby(String city) {
+        if (city==null&&"".equals(city))
+            return Mono.just("bad request");
+        return Mono.just(weatherService.getweather(city, cityurl));
+    }
 }
