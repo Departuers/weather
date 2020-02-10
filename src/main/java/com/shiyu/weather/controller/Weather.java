@@ -32,7 +32,7 @@ public class Weather {
 
     @GetMapping("/city")
     public Mono<String> cityweatherby(String city) {
-        if (city==null&&"".equals(city))
+        if (city==null||"".equals(city))
             return Mono.just("bad request");
         return Mono.just(weatherService.getweather(city, cityurl));
     }

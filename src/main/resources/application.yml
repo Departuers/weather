@@ -3,7 +3,7 @@ spring:
     name: Weather
   redis:
     database: 0
-    host: 192.168.163.129
+    host: 192.168.61.128
     lettuce:
       pool:
         max-active: 8
@@ -12,6 +12,6 @@ spring:
         min-idle: 0
     port: 6379
     timeout: 10000
-    password: ILoveFaker
+    password: sktFaker
 server:
   port: 8069

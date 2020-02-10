@@ -10,15 +10,16 @@ import org.springframework.stereotype.Service;
 public class WeatherServiceImpl implements WeatherService {
     @Autowired
     RedisService redisService;
+
     @Override
     public String getweather(String city, String url) {
 
-        if (redisService.get(city)== null) {
+        if (redisService.get(city) == null) {
             String json = HttpUtil.get(url + city);
-            if (json.endsWith("\"no data\"}")||json.endsWith("\"invilad-citykey\"}")) {
-            return "查无此项";
+            if (json.endsWith("\"no data\"}") || json.endsWith("\"invilad-citykey\"}")) {
+                return "查无此项";
             }
-            redisService.set(city,json,2);
+            redisService.set(city, json, 2);
             return json;
         }
         return redisService.get(city).toString();
